@@ -13,12 +13,12 @@ module.exports = (robot) => {
         msg.send(username + 'は' + lot + 'です');
     });
     robot.hear(/weather>/i ,(msg) => {
-      const url = 'http://weather.livedoor.com/forecast/webservice/json/v1?city=130010'
+      const url = 'http://weather.livedoor.com/forecast/webservice/json/v1?city=130010';
       fetch(url)
       .then(function(res){
       return res.json();
       }).then(function (json) {
         msg.send(json.description.text);
-      })
-    })
+      });
+    });
 };
